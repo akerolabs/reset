@@ -32,5 +32,6 @@ runs:
           git checkout ${{ inputs.source }}
           echo "Now resetting ${{ inputs.target }} to be based on ${{ inputs.source }}"
           git checkout -B ${{ inputs.target }}
+          git commit --allow-empty -m "[skip ci]"
           echo "Force pushing to origin"
           git push origin ${{ inputs.target }} -f
