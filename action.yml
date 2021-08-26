@@ -27,9 +27,9 @@ runs:
           echo "Fetching all"
           git fetch --all
           echo "Doing checkout of branch ${{ inputs.target }}"
-          git checkout ${{ inputs.target }}
+          git switch ${{ inputs.target }}
           echo "Doing checkout of branch ${{ inputs.source }}"
-          git checkout ${{ inputs.source }}
+          git switch ${{ inputs.source }}
           echo "Now resetting ${{ inputs.target }} to be based on ${{ inputs.source }}"
           git checkout -B ${{ inputs.target }}
           git commit --allow-empty -m "[skip ci]"
